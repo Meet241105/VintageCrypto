@@ -1,152 +1,166 @@
 :root {
-    --primary: #ff00ff;
-    --secondary: #00ffff;
-    --bg-dark: #120458;
-    --bg-darker: #0d0335;
-    --text: #ffffff;
-  }
-  
-  body {
-    margin: 0;
-    font-family: 'Courier New', monospace;
-    background: var(--bg-dark);
-    color: var(--text);
-    line-height: 1.6;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Retro Effects */
-  .scanline::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    animation: scanline 6s linear infinite;
-    pointer-events: none;
-    z-index: 50;
-  }
-  
-  @keyframes scanline {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100vh); }
-  }
-  
-  .crt::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
+  --primary: #ff00ff;
+  --secondary: #00ffff;
+  --bg-dark: #120458;
+  --bg-darker: #0d0335;
+  --text: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: var(--bg-dark);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Retro Effects */
+.scanline::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: scanline 6s linear infinite;
+  pointer-events: none;
+  z-index: 50;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+.crt::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.15) 0px,
       rgba(0, 0, 0, 0.15) 1px,
       transparent 1px,
       transparent 2px
-    );
-    pointer-events: none;
-  }
-  
-  .retro-text {
-    text-shadow: 2px 2px 0px var(--primary),
-                 -2px -2px 0px var(--secondary);
-  }
-  
-  /* Header Styles */
-  .header {
-    text-align: center;
-    padding: 2rem 0;
-    background: var(--bg-darker);
-    border-bottom: 2px solid var(--secondary);
-  }
-  
-  .header h1 {
-    font-size: 3rem;
-    margin: 0;
-  }
-  
-  /* Search Bar */
-  .search-container {
-    margin: 2rem 0;
-    text-align: center;
-  }
-  
-  .search-input {
-    background: var(--bg-darker);
-    border: 2px solid var(--secondary);
-    color: var(--text);
-    padding: 0.5rem 1rem;
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
-    width: 300px;
-    max-width: 100%;
-  }
-  
-  /* Crypto Grid */
-  .crypto-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-  }
-  
-  .crypto-card {
-    background: var(--bg-darker);
-    border: 2px solid var(--secondary);
-    padding: 1.5rem;
-    transition: transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .crypto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px var(--secondary);
-  }
-  
-  .crypto-card h2 {
-    margin: 0 0 1rem 0;
-    color: var(--secondary);
-  }
-  
-  .price {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-  }
-  
-  .change {
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    display: inline-block;
-  }
-  
-  .positive { color: #00ff00; }
-  .negative { color: #ff0000; }
-  
-  /* Loading Animation */
-  .loading {
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .loading::after {
-    content: "Loading...";
-    animation: dots 1.5s steps(5, end) infinite;
-  }
-  
-  @keyframes dots {
-    0%, 20% { content: "Loading.  "; }
-    40% { content: "Loading.. "; }
-    60% { content: "Loading..."; }
-    80% { content: "Loading.. "; }
-    100% { content: "Loading.  "; }
-  }
+  );
+  pointer-events: none;
+}
+
+.retro-text {
+  text-shadow: 2px 2px 0px var(--primary),
+               -2px -2px 0px var(--secondary);
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  padding: 2rem 0;
+  background: var(--bg-darker);
+  border-bottom: 2px solid var(--secondary);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* Search Bar */
+.search-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.search-input {
+  background: var(--bg-darker);
+  border: 2px solid var(--secondary);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  width: 300px;
+  max-width: 100%;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--secondary);
+}
+
+/* Crypto Grid */
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.crypto-card {
+  background: var(--bg-darker);
+  border: 2px solid var(--secondary);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.crypto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--secondary);
+}
+
+.crypto-card h2 {
+  margin: 0 0 1rem 0;
+  color: var(--secondary);
+}
+
+.price {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.change {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.positive { color: #00ff00; }
+.negative { color: #ff0000; }
+
+/* Loading Animation */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--secondary);
+  font-size: 1.5rem;
+}
+
+.loading::after {
+  content: "Loading...";
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: "Loading.  "; }
+  40% { content: "Loading.. "; }
+  60% { content: "Loading..."; }
+  80% { content: "Loading.. "; }
+  100% { content: "Loading.  "; }
+}
+
+.error {
+  text-align: center;
+  color: var(--primary);
+  padding: 2rem;
+  font-size: 1.2rem;
+}
